@@ -3,7 +3,8 @@
 ARG REGISTRY=quay.io
 ARG OWNER=jupyter
 ARG BASE_CONTAINER=$REGISTRY/$OWNER/docker-stacks-foundation
-FROM $BASE_CONTAINER
+# FROM $BASE_CONTAINER
+FROM docker-stacks-foundation_3.10:001
 
 LABEL maintainer="Jupyter Project <jupyter@googlegroups.com>"
 

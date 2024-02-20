@@ -4,6 +4,7 @@ ARG REGISTRY=quay.io
 ARG OWNER=jupyter
 ARG BASE_CONTAINER=$REGISTRY/$OWNER/minimal-notebook
 FROM $BASE_CONTAINER
+FROM minimal-notebook_3.10:001
 
 LABEL maintainer="Jupyter Project <jupyter@googlegroups.com>"
 
@@ -64,6 +65,7 @@ RUN mamba install --yes \
 
 # Install facets package which does not have a `pip` or `conda-forge` package at the moment
 WORKDIR /tmp
+RUN pip install nbclassic
 RUN git clone https://github.com/PAIR-code/facets && \
     jupyter nbclassic-extension install facets/facets-dist/ --sys-prefix && \
     rm -rf /tmp/facets && \

@@ -3,7 +3,8 @@
 ARG REGISTRY=quay.io
 ARG OWNER=jupyter
 ARG BASE_CONTAINER=$REGISTRY/$OWNER/scipy-notebook
-FROM $BASE_CONTAINER
+# FROM $BASE_CONTAINER
+FROM scipy-notebook_3.10:001
 
 LABEL maintainer="Jupyter Project <jupyter@googlegroups.com>"
 
